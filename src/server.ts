@@ -11,7 +11,7 @@ app.use("/", basicApiRoute);
 
 AppDataSource.initialize()
   .then(() => {
-    console.log("connect database successful");
+    console.log("Connect database successful");
     app
       .listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);
