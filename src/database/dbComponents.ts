@@ -4,12 +4,12 @@ import { User } from '../modules/user/user.entity';
 
 
 export const AppDataSource = new DataSource({
-  type: 'mysql', 
-  host: '192.168.100.160',
-  port: 3320,
+  type: 'mysql',  
+  host: 'localhost',
+  port: 3306, //ເປັນຫຍັງຈຶ່ງໄດ້ປ່ຽນ PORT 
   username: 'root',
-  password: 'rootpassword',
-  database: 'master_backend_db',
+  password: 'root123',
+  database: 'mydatabase',
   synchronize: true, // use false in production
   logging: false,
   entities: [User],

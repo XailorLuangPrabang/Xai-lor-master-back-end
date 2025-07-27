@@ -1,6 +1,7 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import basicApiRoute from "./modules/basicApi/route";
 import { AppDataSource } from "./database/dbComponents";
+import userRoute from "./modules/user/routes";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -8,8 +9,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use("/", basicApiRoute);
+app.use("/api/users", userRoute);
 
 AppDataSource.initialize()
+  //=> I dont't understand
   .then(() => {
     console.log("Connect database successful");
     app
@@ -23,3 +26,4 @@ AppDataSource.initialize()
   .catch((error: any) => {
     console.log("Error while connecting database", error);
   });
+//=>
